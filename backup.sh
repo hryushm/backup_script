@@ -1,3 +1,11 @@
 #!/bin/bash
-DATETIME=`date "+%y%m%d%H%M"`
-tar zcvf $DATETIME.tar.gz $1
+
+# FIRSTCHAR=`echo $2 | cut -c 1`
+# if [ $FIRSTCHAR != "/" ]; then
+#     echo '移動先は絶対パスを指定してください'
+#     exit 1
+# fi
+
+FILENAME=`date "+%y%m%d%H%M"`.tar.gz
+tar zcvf $FILENAME $1
+mv $FILENAME $2/$FILENAME
