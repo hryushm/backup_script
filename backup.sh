@@ -6,6 +6,7 @@
 #     exit 1
 # fi
 
+DIRNAME=${2:-.}
 FILENAME=`date "+%y%m%d%H%M"`.tar.gz
 tar zcvf $FILENAME $1
-mv $FILENAME $2/$FILENAME
+mv $FILENAME ${DIRNAME%/}/$FILENAME
